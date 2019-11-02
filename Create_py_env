@@ -2,19 +2,24 @@
 conda create -n add_name python=3.6 
 source activate add_name #---activate the evironment 
 
+#-- create a py env with R 
+conda create -n r-env python==3.6 r-essentials
+conda activate r-env #activate r-env environment
+
+#-- install R in a given py env 
+conda install -c r r
+
 #—---  install from shared environment 
 conda env create -f your_path_harmony.yml
 
-
 #--- conda: some useful commands
-
 conda info --envs #list of envirnments 
 conda env list #list of envirnments 
 conda --version
 which python #- python used in the env 
 conda update python #- upadata 
 
-#-- Jupyter NB :  manually add kernels to a py environment 
+#-- Jupyter NoteBook :  manually add kernels to a py environment 
 python -m ipykernel install --user --name scanp-dev --display-name scanp-dev
 
 #—- remove karnel 
@@ -23,9 +28,4 @@ jupyter kernelspec uninstall r-env
 #— list of kernels 
 jupyter kernelspec list
 
-#-- create a py env with R 
-conda create -n r-env python==3.6 r-essentials
-conda activate r-env conda list
 
-#-- install R in py env 
-conda install -c r r
