@@ -1,3 +1,6 @@
+
+#------------------ Create a virtual environment :
+
 #-- create virtual envir “name” 
 conda create -n add_name python=3.6 
 source activate add_name #---activate the evironment 
@@ -19,7 +22,8 @@ conda --version
 which python #- python used in the env 
 conda update python #- upadata 
 
-#-- Jupyter NoteBook :  manually add kernels to a py environment 
+
+#-------------------- Jupyter NoteBook :  manually add kernels to a py environment 
 python -m ipykernel install --user --name scanp-dev --display-name scanp-dev
 
 #—- remove karnel 
@@ -27,5 +31,24 @@ jupyter kernelspec uninstall r-env
 
 #— list of kernels 
 jupyter kernelspec list
+
+#-------------------- Instal scanpy (https://icb-scanpy.readthedocs-hosted.com/en/stable/installation.html)
+
+#-- install louvain / igraph 
+conda install -c conda-forge python-igraph louvain
+
+#— 1- 
+conda install -c bioconda scanpy
+
+
+#— or 2- install development version of scanpy (scanpy==1.4+3.ga8f9600): 
+cd /home/nehard/anaconda3/envs/bbknn #access to vir env that was created previously
+git clone https://github.com/theislab/scanpy
+cd scanpy
+pip install -e .
+
+
+
+
 
 
